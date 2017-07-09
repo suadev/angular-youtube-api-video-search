@@ -21,6 +21,7 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class NgbdModalContent {
   @Input() url;
+  @Input() header;
 
   constructor(public activeModal: NgbActiveModal) {
 
