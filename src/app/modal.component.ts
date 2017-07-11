@@ -12,7 +12,7 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
       </button>
     </div>
     <div class="modal-body">
-      <p> <iframe width="420" height="315" [src]="url | safe"></iframe></p>
+     <iframe [src]="url | safe"></iframe>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" (click)="activeModal.close('Close click')">Close</button>

@@ -1,43 +1,42 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
+
   <div class="container-fluid">
     <div id="navbar" class="navbar-collapse collapse">
-          <input [(ngModel)]="searchKey" (keyup.enter)="DoSearch()" placeholder="Search..." class="form-control"/>  
-      <div *ngIf="commons.requestCount > 0">
-        <div class="loadingDiv">
-          <img src="/images/ajax-loader.gif" alt="">
-        </div>
-      </div>
+      <input [(ngModel)]="searchKey" (keyup.enter)="DoSearch()" placeholder="Search..." class="form-control" />
     </div>
   </div>
-</nav>  
+</nav>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
   <div class="main-grids">
     <div class="top-grids">
       <div class="recommended-info">
-        <h3  *ngIf="response != null">Search Result</h3>
+        <h3 *ngIf="response != null">Search Result</h3>
       </div>
-        <div *ngIf="response!=null">
-          <div *ngIf="response.items.length > 0; then content else notfoundcontent"></div>
+      <div *ngIf="commons.requestCount > 0" class="loadingDiv">
+        <img src="images/ajax-loader.gif" alt="">
+      </div>
+      <div *ngIf="response!=null">
+        <div *ngIf="response.items.length > 0; then content else notfoundcontent"></div>
 
-          <ng-template #content>
-            <div *ngFor="let video of response.items" class="col-md-3 resent-grid recommended-grid slider-top-grids">
-              <div class="resent-grid-img recommended-grid-img">      
-                <a href="#"><img [src]="video.snippet.thumbnails.default.url" alt=""></a>
-                <img class="overlayIcon" src="http://www.bradcerenzia.com/images/playButton.png" alt="" (click)="onClick(video.snippet.title, video.id.videoId)">
-                <div class="time">
-                  <p>4:04</p>
-                </div>
-              </div>
-              <div class="resent-grid-info recommended-grid-info" title="{{video.snippet.description}}">
-                <h3>{{video.snippet.description}}</h3>   
+        <ng-template #content>
+          <div *ngFor="let video of response.items" class="col-md-3 resent-grid recommended-grid slider-top-grids">
+            <div class="resent-grid-img recommended-grid-img">
+              <a href="#"><img [src]="video.snippet.thumbnails.default.url" alt=""></a>
+              <img class="overlayIcon" src="http://www.bradcerenzia.com/images/playButton.png" alt="" (click)="onClick(video.snippet.title, video.id.videoId)">
+              <div class="time">
+                <p>4:04</p>
               </div>
             </div>
+            <div class="resent-grid-info recommended-grid-info" title="{{video.snippet.description}}">
+              <h3>{{video.snippet.description}}</h3>
+            </div>
+          </div>
 
-          </ng-template>
-          <ng-template #notfoundcontent>
-            Not found any video..
-          </ng-template>
-        </div>
+        </ng-template>
+        <ng-template #notfoundcontent>
+          Not found any video..
+        </ng-template>
+      </div>
 
     </div>
   </div>

@@ -2764,9 +2764,7 @@ background: url(../images/social.png) no-repeat 0px 0px;
 }
 
 .loadingDiv{
-	float: right;
-    margin-right: 40px;
-    margin-top: 10px;
+text-align: center;
 }
 
 .recommended-grid-info h3{
@@ -2789,4 +2787,13 @@ background: url(../images/social.png) no-repeat 0px 0px;
 .container-fluid{
 	margin-left: 20% !important;
 	margin-right:20% !important;
+}
+
+.modal-body{
+	text-align:center;
+}
+
+.modal-body iframe{
+    height: 40%;	
+    width: 90%;
 }
