@@ -13,7 +13,7 @@
         <h3 *ngIf="response != null">Search Result</h3>
       </div>
       <div *ngIf="commons.requestCount > 0" class="loadingDiv">
-        <img src="images/ajax-loader.gif" alt="">
+        <img src="/src/images/ajax-loader.gif" alt="">
       </div>
       <div *ngIf="response!=null">
         <div *ngIf="response.items.length > 0; then content else notfoundcontent"></div>
@@ -41,4 +41,3 @@
     </div>
   </div>
 </div>
-<script src="js/bootstrap.min.js"></script>
