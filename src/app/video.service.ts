@@ -12,7 +12,7 @@ export class VideoService {
 
   return  this.http.get('https://www.googleapis.com/youtube/v3/search', {
       params: {
-        key: "AIzaSyBHoI60UsU-DyZ1xgcxXiQPn1NOImUiNBU",
+        key: "your_youtube_api_key",
         type: 'video',
         maxResults: '50',
         part: 'id,snippet',
